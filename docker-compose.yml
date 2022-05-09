@@ -19,7 +19,7 @@ services:
       - "8081:443"
 
   http-three:
-    image: nginx-two
+    image: nginx-three
     build: 
       context: .
       dockerfile: Dockerfile.Http3
