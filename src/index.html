@@ -5,33 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="assets/a.css">
-    <link rel="stylesheet" href="assets/b.css">
-    <link rel="stylesheet" href="assets/c.css">
-    <link rel="stylesheet" href="assets/d.css">
     <title>PoC - issue 746</title>
 </head>
 <body>
     <div id="container">
-        <img src="images/1.jpg" alt="banner">
-        <img src="images/2.jpg" alt="banner">
-        <img src="images/3.jpg" alt="banner">
     </div>
 </body>
 </html>
-<script>
-
-const sleep = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, 1000));
-
-void (async () => {
-    await sleep(2000)
-    for (let i = 4; i <= 6; i++) {
-        const img = document.createElement('img');
-        img.src = '/images/' + i + '.jpg';
-        document.getElementById('container').appendChild(img);
-        console.log('append', i);
-        await sleep();
-    }
-})()
-
-</script>

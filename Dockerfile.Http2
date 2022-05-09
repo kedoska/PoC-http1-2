@@ -1,6 +1,6 @@
 FROM nginx:1.21.6-alpine
 
-COPY src /usr/share/nginx/html
+COPY dist /usr/share/nginx/html
 
 COPY nginx-http-2.conf /etc/nginx/conf.d/default.conf
 
