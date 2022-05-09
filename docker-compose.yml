@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+
+  http-one:
+    image: nginx-one
+    build:
+      context: .
+      dockerfile: Dockerfile.Http1
+    ports:
+      - "8080:80"
+
+  http-two:
+    image: nginx-two
+    build: 
+      context: .
+      dockerfile: Dockerfile.Http2
+    ports:
+      - "8081:443"
