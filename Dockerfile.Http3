@@ -1,0 +1,11 @@
+FROM nginx:1.21.6-alpine
+
+COPY src /usr/share/nginx/html
+
+COPY nginx-http-3.conf /etc/nginx/conf.d/default.conf
+
+COPY cert/cert.pem /ssl/cert.pem
+COPY cert/key.pem /ssl/key.pem
+
+EXPOSE 443
+

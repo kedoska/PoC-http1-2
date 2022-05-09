@@ -17,3 +17,11 @@ services:
       dockerfile: Dockerfile.Http2
     ports:
       - "8081:443"
+
+  http-three:
+    image: nginx-two
+    build: 
+      context: .
+      dockerfile: Dockerfile.Http3
+    ports:
+      - "8082:443"
