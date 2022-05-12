@@ -6,15 +6,15 @@ services:
     image: nginx-one
     build:
       context: .
-      dockerfile: Dockerfile.Http1
+      dockerfile: Dockerfile.HttpA
     ports:
-      - "8080:80"
+      - "8080:443"
 
   http-two:
     image: nginx-two
     build: 
       context: .
-      dockerfile: Dockerfile.Http2
+      dockerfile: Dockerfile.HttpB
     ports:
       - "8081:443"
 
@@ -22,6 +22,14 @@ services:
     image: nginx-three
     build: 
       context: .
-      dockerfile: Dockerfile.Http3
+      dockerfile: Dockerfile.HttpC
     ports:
       - "8082:443"
+
+  http-four:
+    image: nginx-four
+    build: 
+      context: .
+      dockerfile: Dockerfile.HttpD
+    ports:
+      - "8083:443"

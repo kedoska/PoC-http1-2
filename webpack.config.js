@@ -1,6 +1,8 @@
+const {name} = require('./package.json');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const ServerPushWebpackPlugin = require('@feugene/webpack-plugin-server-push').default
 
 module.exports = {
@@ -41,8 +43,15 @@ module.exports = {
       options:{
         index: 'index.html',
         omitLocation: true,
+        filename: name + '.conf',
       }
     }),
     new MiniCssExtractPlugin(),
+    new CopyPlugin({
+      patterns: [
+        { from: "src/static", to: "static" },
+        { from: "src/favicon.ico", to: "favicon.ico" },
+      ],
+    }),
   ],
 };
